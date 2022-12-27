@@ -20,42 +20,12 @@
  * @param rBound - the highest index of the second sublist
  */
 void merge(int numbers[], int lBound, int mid, int rBound) {
-    int tempArray[N];
-    // Copy the first sublist into the tempArray
-    for (int j = lBound; j <= mid; j++) {
-        tempArray[j] = numbers[j];
-    }
-    // Copy the second sublist into the tempArray
-    for (int j = mid + 1, k = rBound; j <= rBound; j++, k--) {
-        tempArray[k] = numbers[j];
-    }
 
-    // Merge the two sublists
-    int j = lBound;
-    int k = rBound;
-    int i = lBound;
-    while (j <= k) {
-        if (tempArray[j] < tempArray[k]) {
-            numbers[i] = tempArray[j];
-            j++;
-        } else {
-            numbers[i] = tempArray[k];
-            k--;
-        }
-        i++;
-    }
 }
 
 // mergeSort
 void mergeSort(int numbers[], int lBound, int rBound) {
-    if (lBound < rBound) {
-        int mid = (lBound + rBound) / 2;
-        mergeSort(numbers, lBound, mid);
-        mergeSort(numbers, mid + 1, rBound);
 
-        merge(numbers, lBound, mid, rBound);
-        // printArray(numbers);
-    }
 }
 
 // fills an array of size n with random values
